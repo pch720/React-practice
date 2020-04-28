@@ -26,17 +26,35 @@ import masthead from './img/bg-masthead.jpg';
 
 
 const drawerWidth = 240;
-
 const H={
+
     img: {
-        background: `url(${masthead})`,
-        minHeight: '30rem',
-        position:'relative',
-        width: '100%',
-        height: 'auto',
         marginTop: '50px',
         paddingTop: '8rem',
-        paddingBottom:'8rem',
+        background: `url(${masthead})`,
+        minHeight: '30rem',
+        height: 'auto',
+        position:'relative',
+        width: '100%',
+        backgroundPosition: 'center',
+        backgroundSize: 'cover',
+        backgroundRepeat: 'no-repeat',
+
+    },
+    tt:{
+        fontSize: '3rem',
+        textAlign: 'center',
+        fontWeight: '700',
+        lineHeight: '1.2',
+        marginBottom: '3rem',
+    },
+    t0:{
+        minHeight: '30rem',
+        height: 'auto',
+        position:'relative',
+        width: '100%',
+        margin: '0 auto 0 auto',
+        padding: '6rem 15% 7rem 15%',
         backgroundPosition: 'center',
         backgroundSize: 'cover',
         backgroundRepeat: 'no-repeat',
@@ -54,6 +72,18 @@ const H={
         fontWeight: '700',
         lineHeight: '1.2',
     },
+    t3: {
+        fontSize: '1rem',
+        textAlign: 'center',
+        fontWeight: '700',
+        color: '#ecb807',
+    },
+    t4: {
+        marginTop: '1rem',
+        fontSize: '1rem',
+        textAlign: 'center',
+        fontWeight: '300',
+    },
     bt: {
         backgroundColor: '#155d74',
         borderColor: '#155d74',
@@ -67,6 +97,9 @@ const H={
         lineHeight: '1.5',
         borderRadius: '.25rem',
     },
+    dA: {
+        textAlign: 'center',
+    }
 }
 
 const useStyles = makeStyles((theme) => ({
@@ -152,15 +185,45 @@ export default function PersistentDrawerRight() {
     };
     return (
         <>
-        <div style={H.img}>
+            {/*헤더*/}
+        <header style={H.img} id="0">
             <div style={H.t1}>Dogether</div>
             <div style={H.t2}>
                 <em>Do something together with somebody</em>
             </div>
+            <div style={H.dA}>
             <Button style={H.bt} onClick={handleClickOpen}>
                 함께하기
             </Button>
-        </div>
+            </div>
+        </header>
+            {/*헤더 끝*/}
+            {/*소개*/}
+            <section id="1" style={H.t0}>
+                <div style={H.t3}>DOGETHER'S</div>
+                <div style={H.tt}>소개</div>
+                <div style={H.t2}>
+                    이 사이트는 같은 목적을 가진 사람들이 모여서 활동할 것입니다!
+                </div>
+                <div style={H.t4}>한가지 일을 나누어서 하거나 한가지 일을 꾸준히 하기 위해서 사람들이 모일것입니다.</div>
+                <div style={H.dA}>
+
+                </div>
+            </section>
+            {/*소개 끝*/}
+            {/* 개발 목적*/}
+            <section id="2" style={H.t0}>
+                <div style={H.t3}>DOGETHER'S</div>
+                <div style={H.tt}>개발 목적</div>
+                <div style={H.t2}>
+                    이 사이트는 같은 목적을 가진 사람들이 모여서 활동할 것입니다!
+                </div>
+                <div style={H.t4}>한가지 일을 나누어서 하거나 한가지 일을 꾸준히 하기 위해서 사람들이 모일것입니다.</div>
+                <div style={H.dA}>
+
+                </div>
+            </section>
+            {/*개발 목적 끝*/}
             {/*로그인 창*/}
             <Dialog open={Dopen} onClose={handleClose} aria-labelledby="form-dialog-title">
                 <DialogTitle id="form-dialog-title">로그인 하기</DialogTitle>
@@ -193,8 +256,8 @@ export default function PersistentDrawerRight() {
                     </Button>
                 </DialogActions>
             </Dialog>
-
-
+            {/*로그인창 끝*/}
+        {/*네비게이션바*/}
         <div className={classes.root}>
             <CssBaseline />
             <AppBar
@@ -245,13 +308,15 @@ export default function PersistentDrawerRight() {
                 <Divider />
                 <List>
                     {['홈', '페이지 소개', '개발 목적', '주요 기능'].map((text, index) => (
-                        <ListItem button key={text}>
+                        <ListItem button key={text}><a href={`#${index}`}>
                             <ListItemText primary={text} />
+                        </a>
                         </ListItem>
                     ))}
                 </List>
             </Drawer>
-        </div>
+            </div>
+            {/*네비게이션바 끝*/}
             </>
     );
 }
