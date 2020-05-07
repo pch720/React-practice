@@ -23,7 +23,8 @@ import Button from "@material-ui/core/Button";
 import TextField from '@material-ui/core/TextField';
 
 import masthead from './img/bg-masthead.jpg';
-
+import {faUser,faCalendarCheck,faCommentDots,faStickyNote} from "@fortawesome/free-regular-svg-icons"
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 
 const drawerWidth = 240;
 const H={
@@ -40,6 +41,10 @@ const H={
         backgroundSize: 'cover',
         backgroundRepeat: 'no-repeat',
 
+    },
+    b2:{
+      backgroundColor: '#155d74',
+      color: '#fff',
     },
     tt:{
         fontSize: '3rem',
@@ -212,17 +217,20 @@ export default function PersistentDrawerRight() {
             </section>
             {/*소개 끝*/}
             {/* 개발 목적*/}
+            <div style={H.b2}>
             <section id="2" style={H.t0}>
                 <div style={H.t3}>DOGETHER'S</div>
                 <div style={H.tt}>개발 목적</div>
+                <FontAwesomeIcon icon={faUser} />
                 <div style={H.t2}>
                     이 사이트는 같은 목적을 가진 사람들이 모여서 활동할 것입니다!
                 </div>
                 <div style={H.t4}>한가지 일을 나누어서 하거나 한가지 일을 꾸준히 하기 위해서 사람들이 모일것입니다.</div>
                 <div style={H.dA}>
-
                 </div>
+
             </section>
+            </div>
             {/*개발 목적 끝*/}
             {/*로그인 창*/}
             <Dialog open={Dopen} onClose={handleClose} aria-labelledby="form-dialog-title">
