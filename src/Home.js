@@ -28,7 +28,10 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 
 const drawerWidth = 240;
 const H={
-
+    a: {
+        color:'white',
+        textDecoration:'none'
+    },
     img: {
         marginTop: '50px',
         paddingTop: '8rem',
@@ -216,22 +219,22 @@ export default function PersistentDrawerRight() {
                 </div>
             </section>
             {/*소개 끝*/}
-            {/* 개발 목적*/}
+            {/* 주요 기능*/}
             <div style={H.b2}>
             <section id="2" style={H.t0}>
                 <div style={H.t3}>DOGETHER'S</div>
-                <div style={H.tt}>개발 목적</div>
+                <div style={H.tt}>주요 기능</div>
                 <FontAwesomeIcon icon={faUser} />
                 <div style={H.t2}>
                     이 사이트는 같은 목적을 가진 사람들이 모여서 활동할 것입니다!
                 </div>
-                <div style={H.t4}>한가지 일을 나누어서 하거나 한가지 일을 꾸준히 하기 위해서 사람들이 모일것입니다.</div>
+                <div style={H.t4}></div>
                 <div style={H.dA}>
                 </div>
 
             </section>
             </div>
-            {/*개발 목적 끝*/}
+            {/*주요 기능 끝*/}
             {/*로그인 창*/}
             <Dialog open={Dopen} onClose={handleClose} aria-labelledby="form-dialog-title">
                 <DialogTitle id="form-dialog-title">로그인 하기</DialogTitle>
@@ -315,11 +318,11 @@ export default function PersistentDrawerRight() {
                 </div>
                 <Divider />
                 <List>
-                    {['홈', '페이지 소개', '개발 목적', '주요 기능'].map((text, index) => (
-                        <ListItem button key={text}><a href={`#${index}`}>
+                    {['홈', '페이지 소개', '주요 기능'].map((text, index) => (
+                        <a style={H.a} href={`#${index}`}><ListItem button key={text}>
                             <ListItemText primary={text} />
-                        </a>
-                        </ListItem>
+
+                        </ListItem></a>
                     ))}
                 </List>
             </Drawer>
