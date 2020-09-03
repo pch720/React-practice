@@ -241,7 +241,6 @@ export default function PersistentDrawerRight() {
                 <DialogContent>
                     <DialogContentText>
                         이 사이트에서 활동하기를 원하신다면 로그인후 이용해 주시기 바랍니다.
-
                     </DialogContentText>
                     <TextField
                         autoFocus
